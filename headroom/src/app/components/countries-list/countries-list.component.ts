@@ -11,4 +11,6 @@ import { Country } from 'src/app/utils/interfaces';
 })
 export class CountriesListComponent {
   @Input() countries: Country[] = [];
+  @Input() scrollIsDown: boolean = false;
+  @Input() height: number = 100;
 }

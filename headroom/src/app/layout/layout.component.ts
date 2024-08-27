@@ -15,10 +15,21 @@ import { CountriesListComponent } from '../components/countries-list/countries-l
 })
 export class LayoutComponent {
   list: Country[] = [];
+  private lastScrollTop = 0;
+  scrollIsDown: boolean = true;
+  @HostListener('window:scroll', ['$event'])
+  onScroll(event: Event): void {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
+    if (scrollTop > this.lastScrollTop) {
+      this.scrollIsDown = true;
+    } else {
+      this.scrollIsDown = false;
+    }
+
+    this.lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  }
   constructor(private dataService: DataService) {
     this.list = this.dataService.getCountries();
   }
-
-
 }

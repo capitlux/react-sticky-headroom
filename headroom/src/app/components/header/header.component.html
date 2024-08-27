@@ -1,8 +1,10 @@
-<section class="z-10 sticky bg-blue-400" [style.top.px]="top" [style.transform]="'translateY(' + translateY + 'px)'">
-  <header
-    class="flex flex-col justify-center items-center"
-    [style.height.px]="height"
-  >
+<section
+  class="z-10 sticky bg-blue-400 transition-[top] duration-200 ease-out"
+  [style.top.px]="scrollIsDown ? -(height / 2) : 0"
+  [style.transform]="'translateY(' + scrollIsDown ? -(height / 2) : 0 + 'px)'"
+  [style.height.px]="height"
+>
+  <header class="flex flex-col justify-center items-center">
     <h1 id="header">Headroom</h1>
     <h3 id="subHeader">
       Submenu is always there for you, so keep on scrolling!
