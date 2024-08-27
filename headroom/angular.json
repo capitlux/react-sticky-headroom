@@ -61,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "headroom:build:production"
+              "buildTarget": "headroom:build:production"
             },
             "development": {
-              "browserTarget": "headroom:build:development"
+              "buildTarget": "headroom:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -72,7 +72,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "headroom:build"
+            "buildTarget": "headroom:build"
           }
         },
         "test": {

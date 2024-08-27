@@ -1,0 +1,12 @@
+<ng-container *ngFor="let country of countries">
+  <div
+    class="sticky top-[50px] p-[20px_10px] bg-[#bbbbbb] shadow-[1px_1px_2px_rgba(0,0,0,0.5)] transition-[top] duration-200 ease-out"
+  >
+    {{ country.country }}
+  </div>
+  <div *ngFor="let city of country.cities">
+    <div class="py-1 px-5">
+      {{ city }}
+    </div>
+  </div>
+</ng-container>
